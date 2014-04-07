@@ -1,3 +1,3 @@
 class Bus < ActiveRecord::Base
-  belongs_to :lines
+  belongs_to :line
 end

@@ -5,8 +5,8 @@ class BusesController < ApplicationController
   end
 
   def create
-    @line = Line.find_by(number: params[:line_id])
-    @bus = Bus.new(bus_params)
+    @line = Line.find_by(number: params[:bus][:line_id])
+    @bus = @line.buses.new(bus_params)
     if @bus.save
       flash[:notice] = "Bus created"
       redirect_to line_path(@line.number)
@@ -46,7 +46,7 @@ class BusesController < ApplicationController
 
   private
   def bus_params
-    params.require(:bus).permit(:line_id)
+    params.require(:bus).permit(:name)
   end
 
 end

@@ -5,7 +5,7 @@
   <h4>Lines:</h3>
   <ul>
     <% @station.lines.each do |line| %>
-      <li><%= line.name %></li>
+      <li><%= link_to line.number, line_path(line.number) %></li>
     <% end %>
   </ul>
 

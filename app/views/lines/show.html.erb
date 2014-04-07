@@ -5,10 +5,12 @@
   <h3>Stations:</h3>
   <ul>
     <% @line.stations.each do |station| %>
-      <li><%= station.name %></li>
+      <li><%= link_to station.name, station_path(station.slug) %></li>
     <% end %>
   </ul>
 
+
+  <h3>Buses:</h3>
   <ul>
     <% @line.buses.each do |bus| %>
       <li><%= bus.name %></li>
