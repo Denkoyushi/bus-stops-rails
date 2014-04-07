@@ -1,0 +1,18 @@
+<% content_for(:title, @line.number) %>
+
+<div>
+  <h2>Line <%= @line.number %></h2>
+  <h4>Stations:</h3>
+  <ul>
+    <% @line.stations.each do |station| %>
+      <li><%= station.name %></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<%= link_to "Edit Line", edit_line_path, class: "btn btn-warning" %>
+<%= link_to "Delete Line", line_path(@line.number),
+                      :confirm => "You sure?",
+                      :method => "delete",
+                      :class => "btn btn-danger" %>

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Stations Index</h1>
+    <% content_for(:title, "Station Index | Bus System") %>
+
+    <% @stations.each do |station| %>
+    <li>
+      <%= link_to station.name %>
+    </li>
+
+    <% end %>
+    <%= link_to "New Station", new_station_path, class: "btn btn-success" %>
+  </div>
+</div>

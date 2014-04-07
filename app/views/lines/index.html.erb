@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Lines Index</h1>
+    <% content_for(:title, "Line Index | Bus System") %>
+
+    <% @lines.each do |line| %>
+    <li>
+      <%= link_to line.number, line_path(line.number) %>
+    </li>
+
+    <% end %>
+    <%= link_to "New Line", new_line_path, class: "btn btn-success" %>
+  </div>
+</div>

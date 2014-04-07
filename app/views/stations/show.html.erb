@@ -1,0 +1,14 @@
+<% content_for(:title, @station.name) %>
+
+<div>
+  <h2>Station <%= @station.name %></h2>
+  <h4>Lines:</h3>
+  <ul>
+    <% @station.lines.each do |line| %>
+      <li><%= line.name %></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<%= link_to "Edit Station", edit_station_path, class: "btn btn-warning" %>
