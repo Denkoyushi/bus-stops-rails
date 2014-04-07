@@ -2,10 +2,16 @@
 
 <div>
   <h2>Line <%= @line.number %></h2>
-  <h4>Stations:</h3>
+  <h3>Stations:</h3>
   <ul>
     <% @line.stations.each do |station| %>
       <li><%= station.name %></li>
+    <% end %>
+  </ul>
+
+  <ul>
+    <% @line.buses.each do |bus| %>
+      <li><%= bus.name %></li>
     <% end %>
   </ul>
 

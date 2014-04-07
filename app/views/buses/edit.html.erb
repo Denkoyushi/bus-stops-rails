@@ -1,0 +1,11 @@
+<h1>Edit Bus</h1>
+
+
+<%= form_for(@bus, url: edit_line_bus_path(@station.slug)) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit(:class => "btn btn-warning") %>
+<% end %>
+

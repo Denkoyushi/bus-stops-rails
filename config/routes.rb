@@ -2,7 +2,7 @@ BusSystem::Application.routes.draw do
 
   match('/', {:via => :get, :to => 'lines#index'})
   resources :lines do
-    resources :stops
+    resources :buses
   end
 
   resources :stations

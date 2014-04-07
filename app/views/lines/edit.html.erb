@@ -15,4 +15,18 @@
   <%= f.submit(:class => "btn btn-warning") %>
 <% end %>
 
+<h1>Create new Bus</h1>
+
+
+<%= form_for(@bus, url: line_buses_path(@line.number)) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="hidden">
+    <%= f.label :id %>
+    <%= f.text_field :id %>
+  </div>
+  <%= f.submit(:class => "btn btn-warning") %>
+<% end %>
 

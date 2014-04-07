@@ -16,6 +16,7 @@ class LinesController < ApplicationController
 
   def edit
     @line = Line.find_by(number: params[:id])
+    @bus = Bus.new
     @stations = Station.all
   end
 

@@ -10,12 +10,21 @@
 
 <div class = "navbar navbar-default navbar-fixed-top">
   <div class"container">
-    <a href="/" class="navbar-text pull-left">Home</a>
-    <a href="/lines" class="navbar-text pull-left">Lines</a>
-    <a href="/stations" class="navbar-text pull-left">Stations</a>
+    <%= link_to "Home", lines_path, class: "navbar-text pull-left" %>
+    <%= link_to "Lines", lines_path, class: "navbar-text pull-left" %>
+    <%= link_to "Stations", stations_path, class: "navbar-text pull-left" %>
   </div>
 </div>
 
+<!-- <div class = "navbar navbar-default navbar-fixed-top">
+  <div class"container">
+    <a href="/" class="navbar-text pull-left">Home</a>
+    <a href="/lines" class="navbar-text pull-left">Lines</a>
+    <a href="/stations" class="navbar-text pull-left">Stations</a>
+    <a href="/lines/buses" class="navbar-text pull-left">Stations</a>
+  </div>
+</div>
+ -->
 <div class="container" id="main">
   <%= flash[:notice] %>
   <%= flash[:alert] %>

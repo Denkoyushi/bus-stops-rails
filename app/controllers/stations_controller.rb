@@ -15,18 +15,22 @@ class StationsController < ApplicationController
   end
 
   def edit
-    @line = Line.find_by(number: params[:id])
-    @stations = Station.all
+    @station = Station.find_by(slug: params[:id])
+    @lines = Line.all
   end
 
   def destroy
+    @station = Station.find_by(slug: params[:id])
+    @station.destroy
+    flash[:notice] = "Station deleted"
+    redirect_to stations_path
   end
 
   def update
-    @station = Station.find_by(number: params[:id])
-    if @station.update(line_params)
-      flash[:notice] = "Line Updated"
-      redirect_to 'show'
+    @station = Station.find_by(slug: params[:id])
+    if @station.update(station_params)
+      flash[:notice] = "Station Updated"
+      redirect_to station_path(@station.slug)
     else
       render 'edit'
     end
@@ -37,7 +41,7 @@ class StationsController < ApplicationController
   end
 
   def show
-    @station = Station.find_by(number: params[:id])
+    @station = Station.find_by(slug: params[:id])
   end
 
   private

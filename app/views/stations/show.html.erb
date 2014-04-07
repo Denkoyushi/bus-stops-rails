@@ -12,3 +12,7 @@
 </div>
 
 <%= link_to "Edit Station", edit_station_path, class: "btn btn-warning" %>
+<%= link_to "Delete Line", station_path(@station.slug),
+                      :confirm => "You sure?",
+                      :method => "delete",
+                      :class => "btn btn-danger" %>
