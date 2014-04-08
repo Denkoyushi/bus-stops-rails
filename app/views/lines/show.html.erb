@@ -13,7 +13,7 @@
   <h3>Buses:</h3>
   <ul>
     <% @line.buses.each do |bus| %>
-      <li><%= bus.name %></li>
+      <li><%= link_to bus.name, bus_path(bus.id) %></li>
     <% end %>
   </ul>
 

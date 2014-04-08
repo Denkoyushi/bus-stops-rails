@@ -6,4 +6,5 @@ describe Line do
   it { should have_many :buses }
   it { should validate_presence_of :number }
   it { should validate_uniqueness_of :number }
+  it { should have_many :arrivals}
 end

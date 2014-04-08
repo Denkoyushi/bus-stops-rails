@@ -1,9 +1,5 @@
 class BusesController < ApplicationController
 
-  def index
-    @buses = Bus.all
-  end
-
   def create
     @line = Line.find_by(number: params[:bus][:line_id])
     @bus = @line.buses.new(bus_params)
@@ -17,13 +13,15 @@ class BusesController < ApplicationController
 
   def edit
     @bus = Bus.find(params[:id])
+    @arrival = @bus.arrivals.new
   end
 
   def destroy
-    # @bus = Bus.find(params[:id])
-    # @bus.destroy
-    # flash[:notice] = "Bus deleted"
-    # redirect_to line_path(@line.number)
+    @bus = Bus.find(params[:id])
+    @line = @bus.line
+    @bus.destroy
+    flash[:notice] = "Bus deleted"
+    redirect_to line_path(@line.number)
   end
 
   def update
@@ -42,6 +40,7 @@ class BusesController < ApplicationController
 
   def show
     @bus = Bus.find(params[:id])
+    @line = @bus.line
   end
 
   private

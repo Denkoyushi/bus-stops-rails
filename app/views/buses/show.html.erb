@@ -1,0 +1,16 @@
+<% content_for(:title, @bus.name) %>
+
+<div>
+  <h2><%= @bus.name %></h2>
+  <h4>Line:</h3>
+  <ul>
+    <li><%= link_to @line.number, line_path(@line.number) %></li>
+  </ul>
+
+</div>
+
+<%= link_to "Edit Bus", edit_bus_path, class: "btn btn-warning" %>
+<%= link_to "Delete Bus", bus_path(@bus),
+                      :confirm => "You sure?",
+                      :method => "delete",
+                      :class => "btn btn-danger" %>
